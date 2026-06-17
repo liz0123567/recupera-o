@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadania Digital e IA: Combate à Desinformação</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Consciência Digital</h1>
+            <p>O Impacto das Deepfakes e da Desinformação na Sociedade</p>
+            <button id="btn-theme" aria-label="Alternar modo de cor">Alternar Modo Escuro</button>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="card" id="sobre">
+            <h2>O que são Deepfakes?</h2>
+            <p>Deepfakes são vídeos, áudios ou imagens gerados por Inteligência Artificial que imitam perfeitamente a aparência e a voz de pessoas reais. Embora a tecnologia tenha usos legítimos no cinema, ela é frequentemente usada para criar notícias falsas altamente convincentes.</p>
+        </section>
+
+        <section class="card" id="deteccao">
+            <h2>Como Identificar Mídias Manipuladas</h2>
+            <p>Para não cair em fraudes e desinformação automatizada, fique atento a estes sinais visuais e auditivos:</p>
+            <ul class="dicas-lista">
+                <li><strong>Piscadas irreais:</strong> Muitas IA falham em reproduzir o ritmo natural do piscar de olhos.</li>
+                <li><strong>Falhas nas bordas:</strong> Verifique se há borrões ao redor do rosto, orelhas ou cabelo.</li>
+                <li><strong>Sincronia de áudio:</strong> Observe se a fala combina perfeitamente com os movimentos labiais.</li>
+            </ul>
+        </section>
+
+        <section class="card" id="quiz-container">
+            <h2>Desafio da Verdade: Teste seus conhecimentos</h2>
+            <p>Responda à questão abaixo para avaliar sua capacidade de combater fake news:</p>
+            
+            <form id="fake-news-quiz">
+                <fieldset>
+                    <legend>Se você receber um vídeo bombástico de uma figura pública fazendo declarações absurdas, qual é a atitude correta?</legend>
+                    
+                    <label class="radio-option">
+                        <input type="radio" name="quiz-question" value="incorreto">
+                        <span>Compartilhar imediatamente nos grupos para alertar a todos antes que apaguem.</span>
+                    </label>
+                    
+                    <label class="radio-option">
+                        <input type="radio" name="quiz-question" value="correto">
+                        <span>Não compartilhar, procurar o tema em portais de notícias confiáveis e agências de checagem.</span>
+                    </label>
+                </fieldset>
+                
+                <button type="submit" id="btn-submit">Verificar Resposta</button>
+            </form>
+            
+            <div id="quiz-feedback" class="hidden"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto Prático de Educação Digital e IA. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
