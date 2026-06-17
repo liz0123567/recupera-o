@@ -1,45 +1,39 @@
 /* ==========================================================================
-   1. VARIÁVEIS DE CORES VIBRANTES E DESIGN
+   1. VARIÁVEIS DE CORES E ESTILO FOFO (PALETA PASTEL)
    ========================================================================== */
 :root {
-    /* Paleta Modo Claro - Cores vivas e tecnológicas */
-    --bg-main: #f0f3ff;
+    --bg-candy: #fff3f5;
     --bg-card: #ffffff;
-    --text-primary: #1e1e2f;
-    --text-secondary: #5c5c7b;
+    --text-main: #4a3e4d;
+    --text-sub: #7d6c80;
     
-    /* Gradiente do Cabeçalho */
-    --gradient-header: linear-gradient(135deg, #6c5ce7, #a861ff);
-    --accent-color: #6c5ce7;
-    --accent-hover: #5b4bc4;
+    --pink-soft: #ff8da1;
+    --pink-hover: #ff758c;
+    --purple-pastel: #b39ddb;
+    --mint-pastel: #81ecec;
+    --yellow-cute: #ffeaa7;
     
-    /* Cores das caixas de destaque */
-    --bg-highlight: #f1f0ff;
-    --border-color: #dcd7ff;
-    
-    /* Feedback */
-    --success-color: #00b894;
-    --error-color: #d63031;
-    
-    --shadow: 0 8px 24px rgba(108, 92, 231, 0.15);
+    --border-bubble: #ffcad4;
+    --shadow-cute: 0 10px 0px rgba(255, 202, 212, 0.4);
+    --radius-bubble: 24px;
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Paleta Modo Escuro - Cores neon e profundas */
+/* Paleta Modo Escuro Fofo */
 body.dark-mode {
-    --bg-main: #0a0a14;
-    --bg-card: #16162a;
-    --text-primary: #f1f2f6;
-    --text-secondary: #a5a5c5;
+    --bg-candy: #1f1a30;
+    --bg-card: #2d2645;
+    --text-main: #ffe3e8;
+    --text-sub: #d3bccc;
     
-    /* Gradiente Cyberpunk */
-    --gradient-header: linear-gradient(135deg, #00cec9, #6c5ce7);
-    --accent-color: #00cec9;
-    --accent-hover: #00b4b0;
+    --pink-soft: #ff758c;
+    --pink-hover: #ff5e78;
+    --purple-pastel: #9c27b0;
+    --mint-pastel: #00cec9;
+    --yellow-cute: #fdcb6e;
     
-    --bg-highlight: #1f1f3a;
-    --border-color: #2d2d50;
-    
-    --shadow: 0 8px 24px rgba(0, 206, 201, 0.2);
+    --border-bubble: #4d3f7a;
+    --shadow-cute: 0 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
@@ -52,23 +46,33 @@ body.dark-mode {
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
-    line-height: 1.6;
+    background-color: var(--bg-candy);
+    color: var(--text-main);
+    font-family: 'Fredoka', system-ui, sans-serif;
     transition: background-color 0.4s, color 0.4s;
+    padding-bottom: 3rem;
+    background-image: radial-gradient(var(--border-bubble) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
 }
 
 /* ==========================================================================
-   3. CABEÇALHO (HEADER) COM GRADIENTE
+   3. LAYOUT COM FLEXBOX (HEADER & MAIN)
    ========================================================================== */
 header {
-    background: var(--gradient-header);
-    color: white;
-    padding: 3.5rem 1rem;
-    border-radius: 0 0 30px 30px;
-    box-shadow: var(--shadow);
-    transition: background 0.4s;
+    background-color: var(--bg-card);
+    border: 4px solid var(--pink-soft);
+    border-radius: 0 0 var(--radius-bubble) var(--radius-bubble);
+    padding: 2.5rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-cute);
+    text-align: center;
+}
+
+.decoracao-topo {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: bounce 2s infinite ease-in-out;
+    display: inline-block;
 }
 
 .header-container {
@@ -77,226 +81,273 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 header h1 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 2.5rem;
+    color: var(--pink-soft);
+    font-weight: 700;
 }
 
 header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    font-weight: 300;
+    font-size: 1.15rem;
+    color: var(--text-sub);
     max-width: 600px;
 }
 
-/* Botão de Tema Estilizado */
 #btn-theme {
-    background-color: white;
-    color: #6c5ce7;
-    border: none;
-    padding: 0.8rem 1.8rem;
+    background-color: var(--yellow-cute);
+    color: #5d4a13;
+    border: 3px solid #ffde7d;
+    padding: 0.6rem 1.5rem;
     border-radius: 50px;
     cursor: pointer;
     font-weight: 700;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+    box-shadow: 0 4px 0 #ffd152;
+    transition: var(--transition-bounce);
 }
 
-#btn-theme:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+#btn-theme:active {
+    transform: translateY(4px);
+    box-shadow: none;
 }
 
 body.dark-mode #btn-theme {
-    color: #16162a;
-    background-color: #00cec9;
+    background-color: var(--purple-pastel);
+    color: #fff;
+    border-color: #7b1fa2;
+    box-shadow: 0 4px 0 #4a148c;
 }
 
-/* ==========================================================================
-   4. CONTEÚDO PRINCIPAL E CARDS COLORIDOS
-   ========================================================================== */
+/* Grid vertical usando Flexbox */
 main {
-    max-width: 800px;
-    margin: 2.5rem auto;
-    padding: 0 1.5rem;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-/* Cards com bordas suaves e sombras coloridas */
 .card {
     background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 4px solid var(--border-bubble);
+    border-radius: var(--radius-bubble);
     padding: 2rem;
-    border-radius: 16px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s, background-color 0.4s;
+    box-shadow: var(--shadow-cute);
+    transition: var(--transition-bounce);
 }
 
 .card:hover {
-    transform: translateY(-4px); /* Efeito flutuante ao passar o mouse */
+    transform: translateY(-5px);
 }
 
 .card h2 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
+    font-size: 1.8rem;
+    color: var(--pink-soft);
+    margin-bottom: 1.2rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
-/* Adicionando cores nas listas de dicas */
-.dicas-lista {
+.fofo-lista {
     list-style: none;
-    margin-top: 1.2rem;
-}
-
-.dicas-lista li {
-    background-color: var(--bg-highlight);
-    margin-bottom: 0.8rem;
-    padding: 1rem 1rem 1rem 2.8rem;
-    border-radius: 10px;
-    position: relative;
-    border-left: 4px solid var(--accent-color);
-    transition: background-color 0.4s;
-}
-
-.dicas-lista li::before {
-    content: "🔍";
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-}
-
-/* ==========================================================================
-   5. FORMULÁRIO / QUIZ ESTILIZADO
-   ========================================================================== */
-#fake-news-quiz fieldset {
-    border: none;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin: 1.5rem 0;
 }
 
-#fake-news-quiz legend {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
+.fofo-lista li {
+    background-color: var(--bg-candy);
+    border: 3px solid var(--border-bubble);
+    padding: 1.2rem 1.2rem 1.2rem 3rem;
+    border-radius: 18px;
+    position: relative;
 }
 
-/* Opções de rádio em formato de botões grandes */
-.radio-option {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: var(--bg-highlight);
-    padding: 1.2rem;
-    border-radius: 12px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.radio-option:hover {
-    border-color: var(--border-color);
-    background-color: var(--bg-card);
-}
-
-/* Customização interna do rádio */
-.radio-option input[type="radio"] {
-    accent-color: var(--accent-color);
-    width: 18px;
-    height: 18px;
-}
-
-/* Botão de Enviar com efeito de clique */
-#btn-submit {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: 700;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
-    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
-}
-
-#btn-submit:hover {
-    background-color: var(--accent-hover);
-    box-shadow: 0 6px 16px rgba(108, 92, 231, 0.4);
-}
-
-#btn-submit:active {
-    transform: scale(0.98); /* Efeito de afundar ao clicar */
-}
-
-/* Caixas de resposta (Feedback) bem coloridas */
-#quiz-feedback {
-    margin-top: 1.5rem;
-    padding: 1.2rem;
-    border-radius: 12px;
-    font-weight: 600;
-    text-align: center;
-    animation: popIn 0.3s ease-out;
-}
-
-.success { 
-    background-color: rgba(0, 184, 148, 0.15); 
-    color: var(--success-color); 
-    border: 2px solid var(--success-color);
-}
-
-.error { 
-    background-color: rgba(214, 48, 49, 0.15); 
-    color: var(--error-color); 
-    border: 2px solid var(--error-color);
-}
-
-.hidden { display: none; }
-
-/* Animação para o feedback aparecer suavemente */
-@keyframes popIn {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+.fofo-lista li::before {
+    content: "🌸";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
 }
 
 /* ==========================================================================
-   6. RODAPÉ E RESPONSIVIDADE
+   4. LAYOUT DO QUIZ INTERATIVO
    ========================================================================== */
-footer {
-    text-align: center;
-    padding: 3rem 1rem;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+.painel-placar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--yellow-cute);
+    border: 4px solid #ffd25a;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #614d0f;
 }
 
-@media (max-width: 600px) {
-    header {
-        border-radius: 0 0 20px 20px;
-        padding: 2.5rem 1rem;
-    }
+body.dark-mode .painel-placar {
+    background-color: #2b1e3a;
+    border-color: var(--purple-pastel);
+    color: var(--purple-pastel);
+}
 
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    .card {
-        padding: 1.5rem;
-    }
+.barra-progresso-container {
+    width: 100%;
+    height: 14px;
+    background-color: var(--bg-candy);
+    border-radius: 50px;
+    border: 3px solid var(--border-bubble);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.barra-progresso {
+    width: 0%;
+    height: 100%;
+    background-color: var(--pink-soft);
+    border-radius: 50px;
+    transition: width 0.4s ease;
+}
+
+.opcoes-quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.botao-opcao {
+    background-color: var(--bg-candy);
+    border: 3px solid var(--border-bubble);
+    border-radius: 16px;
+    padding: 1.2rem;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    color: var(--text-main);
+    font-weight: 600;
+    width: 100%;
+    transition: var(--transition-bounce);
+}
+
+.botao-opcao:hover {
+    border-color: var(--pink-soft);
+    background-color: var(--bg-card);
+}
+
+.botao-opcao.correta {
+    background-color: #d4edda !important;
+    border-color: #28a745 !important;
+    color: #155724 !important;
+}
+
+.botao-opcao.errada {
+    background-color: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+}
+
+.painel-feedback {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 18px;
+    border: 3px dashed var(--pink-soft);
+    text-align: center;
+    background-color: var(--bg-candy);
+}
+
+.btn-acao {
+    background-color: var(--pink-soft);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 0 var(--pink-hover);
+    transition: var(--transition-bounce);
+}
+
+.btn-acao:active {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+.tela-final {
+    text-align: center;
+}
+
+.ranking-badge {
+    display: inline-block;
+    background-color: var(--purple-pastel);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+/* ==========================================================================
+   5. CAMPOS DO FORMULÁRIO
+   ========================================================================== */
+.campo-fofo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.campo-fofo label {
+    font-weight: 700;
+    color: var(--pink-soft);
+}
+
+.campo-fofo input, .campo-fofo textarea {
+    border: 3px solid var(--border-bubble);
+    background-color: var(--bg-candy);
+    color: var(--text-main);
+    padding: 1rem;
+    border-radius: 16px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.alerta-personalizado {
+    background-color: var(--bg-candy);
+    border: 3px dashed var(--pink-soft);
+    padding: 1rem;
+    border-radius: 16px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE E ANIMAÇÕES
+   ========================================================================== */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--text-sub);
+}
+
+.hidden { display: none !important; }
+
+@media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+    .card { padding: 1.5rem; }
 }
